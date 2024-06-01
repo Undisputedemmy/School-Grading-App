@@ -1,0 +1,1 @@
+This is a student grading app i created while working a school, the organisation is pretty messy, had to come up with this solution within a month. i will update the readme files as soon as i upload and improve the codes and organize it in a better way
