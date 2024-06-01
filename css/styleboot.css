@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}   
+
+nav{
+    width: 100%;
+    background-color: #990012;
+    height: 75px;
+    line-height: 75px;
+    padding: 0px 120px;
+}
+
+nav h1{
+    font-size: 32px;
+    font-family: sans-serif;
+    color: #fff;
+    float: left;
+    margin-top: 20px;
+    
+}
+
+nav ul{
+    float: right;
+}
+
+nav ul li{
+    float: left;
+    list-style: none;
+    position: relative;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 17px;
+    padding: 0px 16px;
+    display: block;
+}
+
+nav ul li a:hover{
+    background-color: gold;
+}
+
+nav ul li ul {
+    position: absolute;
+    display: none;
+    background-color: #990012;
+    border-radius: 0px 0px 5px 5px;
+}
+
+nav ul li:hover ul{
+    display: block;
+    background-color: #990012;
+}
+
+nav ul li ul li{
+    line-height: 1;
+    width: 190px;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+nav ul li ul li a{
+    padding: 10px 16px;
+}
+
+nav ul li ul li a:hover{
+    background-color: gold;
+}
+
+/* styleboot.css */
+
+/* Reduce the width of text input fields */
+.form-group input {
+    max-width: 200px; /* Adjust the value as needed */
+  }
+  
