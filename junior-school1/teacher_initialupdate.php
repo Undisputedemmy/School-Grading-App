@@ -1,0 +1,132 @@
+<?php
+include 'connect.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+    // Retrieve the submitted values from the form
+    $mathTeacherInitial = $_POST['math_teacher_initial'];
+    $englishTeacherInitial = $_POST['english_teacher_initial'];
+    $businessTeacherInitial = $_POST['business_teacher_initial'];
+    $ccaTeacherInitial = $_POST['cca_teacher_initial'];
+    $bstTeacherInitial = $_POST['bst_teacher_initial'];
+    $crsTeacherInitial = $_POST['crs_teacher_initial'];
+    $pvsTeacherInitial = $_POST['pvs_teacher_initial'];
+    $nvTeacherInitial = $_POST['nv_teacher_initial'];
+    $historyTeacherInitial = $_POST['history_teacher_initial'];
+    $yorubaTeacherInitial = $_POST['yoruba_teacher_initial'];
+    $frenchTeacherInitial = $_POST['french_teacher_initial'];
+    $artcraftTeacherInitial = $_POST['artcraft_teacher_initial'];
+
+    // Update the teacher initials in the database
+    $sql = "UPDATE teacher_initials SET
+            mathematics = '$mathTeacherInitial',
+            english = '$englishTeacherInitial',
+            business = '$businessTeacherInitial',
+            cca = '$ccaTeacherInitial',
+            bst = '$bstTeacherInitial',
+            crs = '$crsTeacherInitial',
+            pvs = '$pvsTeacherInitial',
+            nv = '$nvTeacherInitial',
+            history = '$historyTeacherInitial',
+            yoruba = '$yorubaTeacherInitial',
+            french = '$frenchTeacherInitial',
+            artcraft = '$artcraftTeacherInitial'";
+
+    // Execute the query
+    $result = mysqli_query($con, $sql);
+
+    if ($result) {
+        echo "Teacher initials updated successfully!";
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
+}
+
+// Fetch the existing teacher initials from the database
+$selectQuery = "SELECT * FROM teacher_initials";
+$selectResult = mysqli_query($con, $selectQuery);
+$teacherInitials = mysqli_fetch_assoc($selectResult);
+
+?>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <title>initials</title>
+</head>
+
+<body>
+    <div class="container my-2">
+        <h1>Update Teacher's Initials</h1>
+        <form method="POST">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-2">
+                        <label class="form-label">Math </label>
+                        <input type="text" class="form-control" name="math_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">English </label>
+                        <input type="text" class="form-control" name="english_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">business </label>
+                        <input type="text" class="form-control" name="business_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">cca </label>
+                        <input type="text" class="form-control" name="cca_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">bst </label>
+                        <input type="text" class="form-control" name="bst_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Artcraft </label>
+                        <input type="text" class="form-control" name="artcraft_teacher_initial" required>
+                    </div>
+                    </div>
+                <div class="col-md-4">
+                    <div class="mb-2">
+                        <label class="form-label">Crs </label>
+                        <input type="text" class="form-control" name="crs_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">pvs </label>
+                        <input type="text" class="form-control" name="pvs_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">nv </label>
+                        <input type="text" class="form-control" name="nv_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Yoruba </label>
+                        <input type="text" class="form-control" name="yoruba_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">French</label>
+                        <input type="text" class="form-control" name="french_teacher_initial" required>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">History </label>
+                        <input type="text" class="form-control" name="history_teacher_initial" required>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha284-rpK2jkw6Y2/dWf9RtE/LZQCeDJXh2UZbpx5mlVL9YrjvJw1IbYAsCzsfChtpejUh" crossorigin="anonymous"></script>
+</body>
+
+</html>
