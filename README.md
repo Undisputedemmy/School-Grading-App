@@ -1,1 +1,1 @@
-This is a student grading app i created while working a school, the organisation is pretty messy, had to come up with this solution within a month. i will update the readme files as soon as i upload and improve the codes and organize it in a better way
+This is a student grading app I created while working in a school, the organization of the codes and files is pretty messy, had to come up with this solution within a month. I will update the readme files as soon as I upload and improve the codes and organize It in a better way
